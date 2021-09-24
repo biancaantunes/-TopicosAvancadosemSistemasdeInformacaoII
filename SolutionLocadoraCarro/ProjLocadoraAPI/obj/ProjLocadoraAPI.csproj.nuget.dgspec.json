@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj": {}
+    "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj": {
+    "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
+        "projectUniqueName": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
         "projectName": "ProjLocadoraAPI",
-        "projectPath": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
+        "projectPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
         "packagesPath": "C:\\Users\\bia_a\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\obj\\",
+        "outputPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bia_a\\AppData\\Roaming\\NuGet\\NuGet.Config",

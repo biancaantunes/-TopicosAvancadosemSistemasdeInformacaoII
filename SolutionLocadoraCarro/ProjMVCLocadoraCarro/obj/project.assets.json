@@ -7153,11 +7153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\ProjMVCLocadoraCarro.csproj",
+      "projectUniqueName": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\ProjMVCLocadoraCarro.csproj",
       "projectName": "ProjMVCLocadoraCarro",
-      "projectPath": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\ProjMVCLocadoraCarro.csproj",
+      "projectPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\ProjMVCLocadoraCarro.csproj",
       "packagesPath": "C:\\Users\\bia_a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\obj\\",
+      "outputPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjMVCLocadoraCarro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bia_a\\AppData\\Roaming\\NuGet\\NuGet.Config",

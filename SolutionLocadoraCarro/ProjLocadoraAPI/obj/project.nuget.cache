@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TPyMXXq0m40xbcq7fUr4q+JLQCY/FykPsF7+Iyno7laCBtwXkjydT6ETqV6jZQyBPYHWu1l6/ZzI2J6rK8l1Aw==",
+  "dgSpecHash": "HzO7w/tLUBRhzID8BsFdfZfismEtVlF0dgkPJGFygEeH2f3pRrX613xa1yTJlHitjqBv98RulYALa3h4NGUeqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bia_a\\Desktop\\Aula\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
+  "projectFilePath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\SolutionLocadoraCarro\\ProjLocadoraAPI\\ProjLocadoraAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bia_a\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bia_a\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
