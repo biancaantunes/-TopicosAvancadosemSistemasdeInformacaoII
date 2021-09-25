@@ -25,7 +25,6 @@ namespace ProjLojaMVC.Controllers
             var cli = await _context.Compra.Include(c => c.Cliente).ToListAsync();
             var fun = await _context.Compra.Include(c => c.Funcionario).ToListAsync();
             var pro = await _context.Compra.Include(c => c.Produto).ToListAsync();
-            //return View(await _context.Compra.ToListAsync());
             return View(cli);
         }
 
@@ -115,7 +114,7 @@ namespace ProjLojaMVC.Controllers
                 return NotFound();
             }
 
-            var compra = _context.Compra.Include(c => c.Cliente).First(v => v.Id == id);
+            var compra = await _context.Compra.FindAsync(id);
             var clientes = _context.Cliente.ToList();
 
             compra.Clientes = new List<SelectListItem>();
@@ -127,31 +126,27 @@ namespace ProjLojaMVC.Controllers
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            var func = _context.Compra.Include(c => c.Funcionario).First(v => v.Id == id);
-
             var funcionarios = _context.Funcionario.ToList();
 
-            func.Funcionarios = new List<SelectListItem>();
+            compra.Funcionarios = new List<SelectListItem>();
 
             foreach (var fun in funcionarios)
             {
-                func.Funcionarios.Add(new SelectListItem { Text = fun.Nome, Value = fun.Id.ToString() });
+                compra.Funcionarios.Add(new SelectListItem { Text = fun.Nome, Value = fun.Id.ToString() });
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            var produto = _context.Compra.Include(c => c.Produto).First(v => v.Id == id);
 
             var produtos = _context.Produto.ToList();
 
-            produto.Produtos = new List<SelectListItem>();
+            compra.Produtos = new List<SelectListItem>();
 
             foreach (var pro in produtos)
             {
-                produto.Produtos.Add(new SelectListItem { Text = pro.Descricao, Value = pro.Id.ToString() });
+                compra.Produtos.Add(new SelectListItem { Text = pro.Descricao, Value = pro.Id.ToString() });
             }
 
-            //compra = await _context.Compra.FindAsync(id);
             if (compra == null)
             {
                 return NotFound();
@@ -179,10 +174,12 @@ namespace ProjLojaMVC.Controllers
             int _funcionarioId = int.Parse(Request.Form["Funcionario"].ToString());
             var funcionario = _context.Funcionario.FirstOrDefault(m => m.Id == _funcionarioId);
             compra.Funcionario = funcionario;
+            
 
             int _produtoId = int.Parse(Request.Form["Produto"].ToString());
             var produto = _context.Produto.FirstOrDefault(m => m.Id == _produtoId);
             compra.Produto = produto;
+            
 
             if (ModelState.IsValid)
             {
