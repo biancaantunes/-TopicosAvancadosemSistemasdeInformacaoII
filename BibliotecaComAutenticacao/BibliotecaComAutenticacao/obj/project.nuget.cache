@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jQAZUzLFc0YfUOvy16fOa6VcvZ7AIefsMKSBBMoGX+z9DZRUsKU2NhJY7mQKhm14eTa92ZgigBj0gR6IJ2JIng==",
+  "dgSpecHash": "23/xq7dEsB4KWUSgbMvTirmhCePoVsKkO5bwhaZoo9oYN/TkUI3t6Vzb1FNIpyBnvWarf5OqHzoF1q+xB3+LMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
+  "projectFilePath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bia_a\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bia_a\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.9\\microsoft.aspnetcore.cryptography.internal.5.0.9.nupkg.sha512",

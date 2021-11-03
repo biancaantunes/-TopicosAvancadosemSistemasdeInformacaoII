@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj": {}
+    "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj": {
+    "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
+        "projectUniqueName": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
         "projectName": "BibliotecaComAutenticacao",
-        "projectPath": "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
+        "projectPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao.csproj",
         "packagesPath": "C:\\Users\\bia_a\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bia_a\\Desktop\\Aula\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\obj\\",
+        "outputPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\BibliotecaComAutenticacao\\BibliotecaComAutenticacao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bia_a\\AppData\\Roaming\\NuGet\\NuGet.Config",
