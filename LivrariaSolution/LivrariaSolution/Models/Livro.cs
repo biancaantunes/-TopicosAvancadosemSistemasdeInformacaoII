@@ -28,5 +28,11 @@ namespace LivrariaSolution.Models
         [NotMapped]
         [DisplayName("Imagem do Livro")]
         public IFormFile ImagemLivro { get; set; }
+
+        public virtual Status Status { get; set; }
+
+        [NotMapped]
+        [DisplayName("Status")]
+        public virtual List<SelectListItem> ListaStatus { get; set; }
     }
 }

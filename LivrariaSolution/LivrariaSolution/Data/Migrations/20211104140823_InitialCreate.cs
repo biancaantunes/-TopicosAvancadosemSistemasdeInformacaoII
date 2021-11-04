@@ -50,6 +50,19 @@ namespace LivrariaSolution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Status",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Status", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Livro",
                 columns: table => new
                 {
@@ -59,7 +72,8 @@ namespace LivrariaSolution.Data.Migrations
                     Editora = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AutorId = table.Column<int>(type: "int", nullable: true),
                     Dtlancamento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Imagem = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Imagem = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StatusId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -68,6 +82,12 @@ namespace LivrariaSolution.Data.Migrations
                         name: "FK_Livro_Autor_AutorId",
                         column: x => x.AutorId,
                         principalTable: "Autor",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Livro_Status_StatusId",
+                        column: x => x.StatusId,
+                        principalTable: "Status",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -124,6 +144,11 @@ namespace LivrariaSolution.Data.Migrations
                 name: "IX_Livro_AutorId",
                 table: "Livro",
                 column: "AutorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Livro_StatusId",
+                table: "Livro",
+                column: "StatusId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -142,6 +167,9 @@ namespace LivrariaSolution.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Autor");
+
+            migrationBuilder.DropTable(
+                name: "Status");
         }
     }
 }

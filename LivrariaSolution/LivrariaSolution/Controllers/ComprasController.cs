@@ -74,7 +74,6 @@ namespace LivrariaSolution.Controllers
             }
 
             return View(c);
-
         }
 
         // POST: Compras/Create
@@ -94,6 +93,20 @@ namespace LivrariaSolution.Controllers
 
             int _livroId = int.Parse(Request.Form["Livro"].ToString());
             var livro = _context.Livro.FirstOrDefault(l => l.Id == _livroId);
+            compra.Livro = livro;
+
+            //Regra de negócio do status do livro
+            var status = _context.Status.FirstOrDefault(s => s.Descricao == "Vendido");
+            if (status == null)
+            {
+                Status novoStatus = new Status();
+                novoStatus.Descricao = "Vendido";
+                _context.Add(novoStatus);
+                status = novoStatus;
+            }
+            livro.Status = status;
+            //Fim da regra de negócio
+
             compra.Livro = livro;
 
             if (ModelState.IsValid)
@@ -144,7 +157,6 @@ namespace LivrariaSolution.Controllers
                 compra.Livros.Add(new SelectListItem { Text = li.Titulo, Value = li.Id.ToString() });
             }
 
-            //var compra = await _context.Compra.FindAsync(id);
             if (compra == null)
             {
                 return NotFound();
@@ -222,7 +234,16 @@ namespace LivrariaSolution.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var compra = await _context.Compra.FindAsync(id);
+            //Regra de negócio devolver status "Disponível" para o livro
+            var ListaCompras = await _context.Compra.Include(c => c.Cliente).Include(f => f.Funcionario).Include(l => l.Livro).ToListAsync();
+            var compra = ListaCompras.FirstOrDefault(e => e.Id == id);
+            int _livroId = compra.Livro.Id;
+            var ListaLivros = await _context.Livro.Include(s => s.Status).Include(a => a.Autor).ToListAsync();
+            var livro = ListaLivros.FirstOrDefault(e => e.Id == _livroId);
+            var statusDisponivel = _context.Status.FirstOrDefault(s => s.Descricao == "Disponível");
+            livro.Status = statusDisponivel;
+            //Fim da regra de negócio
+            //var compra = await _context.Compra.FindAsync(id);
             _context.Compra.Remove(compra);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

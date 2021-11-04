@@ -28,8 +28,7 @@ namespace LivrariaSolution.Controllers
         // GET: Livros
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Livro.Include(a => a.Autor).ToListAsync());
-            //return View(await _context.Livro.ToListAsync());
+            return View(await _context.Livro.Include(a => a.Autor).Include(s => s.Status).ToListAsync());
         }
 
         // GET: Livros/Details/5
@@ -90,6 +89,18 @@ namespace LivrariaSolution.Controllers
                     await livro.ImagemLivro.CopyToAsync(fileStream);
                 }
 
+                //Regra de negócio do status do livro
+                var status = _context.Status.FirstOrDefault(s => s.Descricao == "Disponível");
+                if (status == null)
+                {
+                    Status novoStatus = new Status();
+                    novoStatus.Descricao = "Disponível";
+                    _context.Add(novoStatus);
+                    status = novoStatus;
+                }
+                livro.Status = status;
+                //Fim da regra de negócio
+
                 _context.Add(livro);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -114,7 +125,15 @@ namespace LivrariaSolution.Controllers
                 livro.Autores.Add(new SelectListItem { Text = aut.Nome, Value = aut.Id.ToString() });
             }
 
-            //var livro = await _context.Livro.FindAsync(id);
+            livro = _context.Livro.Include(s => s.Status).First(i => i.Id == id);
+            var statusList = _context.Status.ToList();
+            livro.ListaStatus = new List<SelectListItem>();
+
+            foreach (var stat in statusList)
+            {
+                livro.ListaStatus.Add(new SelectListItem { Text = stat.Descricao, Value = stat.Id.ToString() });
+            }
+
             if (livro == null)
             {
                 return NotFound();
@@ -127,7 +146,7 @@ namespace LivrariaSolution.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Editora,Dtlancamento,ImagemLivro")] Livro livro)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Editora,Dtlancamento,Imagem")] Livro livro)
         {
             if (id != livro.Id)
             {
@@ -137,6 +156,10 @@ namespace LivrariaSolution.Controllers
             int _autorId = int.Parse(Request.Form["Autor"].ToString());
             var autor = _context.Autor.FirstOrDefault(a => a.Id == _autorId);
             livro.Autor = autor;
+
+            int _statusId = int.Parse(Request.Form["Status"].ToString());
+            var status = _context.Status.FirstOrDefault(s => s.Id == _statusId);
+            livro.Status = status;
 
             if (ModelState.IsValid)
             {
@@ -172,6 +195,7 @@ namespace LivrariaSolution.Controllers
                     livroCompare.Autor = livro.Autor;
                     livroCompare.Dtlancamento = livro.Dtlancamento;
                     livroCompare.Imagem = string.IsNullOrEmpty(livro.Imagem) ? livroCompare.Imagem : livro.Imagem;
+                    livroCompare.Status = livro.Status;
 
                     _context.Update(livroCompare);
                     await _context.SaveChangesAsync();

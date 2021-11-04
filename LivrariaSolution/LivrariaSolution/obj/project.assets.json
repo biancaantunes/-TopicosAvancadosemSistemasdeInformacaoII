@@ -7498,11 +7498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bia_a\\Desktop\\Aula\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
+      "projectUniqueName": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
       "projectName": "LivrariaSolution",
-      "projectPath": "C:\\Users\\bia_a\\Desktop\\Aula\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
+      "projectPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
       "packagesPath": "C:\\Users\\bia_a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bia_a\\Desktop\\Aula\\LivrariaSolution\\LivrariaSolution\\obj\\",
+      "outputPath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\LivrariaSolution\\LivrariaSolution\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bia_a\\AppData\\Roaming\\NuGet\\NuGet.Config",

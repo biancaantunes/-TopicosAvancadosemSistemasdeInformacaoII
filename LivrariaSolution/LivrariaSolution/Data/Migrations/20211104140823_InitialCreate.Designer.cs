@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LivrariaSolution.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211102011200_InitialCreate")]
+    [Migration("20211104140823_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,6 +121,9 @@ namespace LivrariaSolution.Data.Migrations
                     b.Property<string>("Imagem")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("StatusId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Titulo")
                         .HasColumnType("nvarchar(max)");
 
@@ -128,7 +131,24 @@ namespace LivrariaSolution.Data.Migrations
 
                     b.HasIndex("AutorId");
 
+                    b.HasIndex("StatusId");
+
                     b.ToTable("Livro");
+                });
+
+            modelBuilder.Entity("LivrariaSolution.Models.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -358,7 +378,13 @@ namespace LivrariaSolution.Data.Migrations
                         .WithMany()
                         .HasForeignKey("AutorId");
 
+                    b.HasOne("LivrariaSolution.Models.Status", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId");
+
                     b.Navigation("Autor");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

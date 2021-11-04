@@ -46,6 +46,12 @@
         <dd class="col-sm-10">
             <img src="@("~/image/" + Model.Imagem)" asp-append-version="true" width="200px" height="200px" />
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status.Descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status.Descricao)
+        </dd>
     </dl>
 </div>
 <div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rrwUvQpjCy07FuUxkGTYc9Z226nYG8EHASJVJUqeFGQgfi+8mKLrL35Puz34QWKsrYZ2GWESc0U1aJ+8kcO56g==",
+  "dgSpecHash": "GRanP1B8pizmaj5TxijDVQGPqS74N0xoDR2fEWKUILfqn/TkN5hB5Bj2cfiOIb/DeywFDaW5TaDQ89H1tfqzFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bia_a\\Desktop\\Aula\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
+  "projectFilePath": "C:\\GitHub\\TopicosAvancadosemSistemasdeInformacaoII\\LivrariaSolution\\LivrariaSolution\\LivrariaSolution.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bia_a\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bia_a\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.9\\microsoft.aspnetcore.cryptography.internal.5.0.9.nupkg.sha512",
